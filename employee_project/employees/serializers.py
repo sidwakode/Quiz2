@@ -4,7 +4,7 @@ from .models import Department, Employee, Attendance
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Department
-        fields = '_all_'
+        fields = '__all__'
 
 class EmployeeSerializer(serializers.ModelSerializer):
     department = DepartmentSerializer(read_only=True)
@@ -13,7 +13,7 @@ class EmployeeSerializer(serializers.ModelSerializer):
     )
     class Meta:
         model = Employee
-        fields = '_all_'
+        fields = '__all__'
 
 class AttendanceSerializer(serializers.ModelSerializer):
     employee = EmployeeSerializer(read_only=True)
@@ -22,4 +22,4 @@ class AttendanceSerializer(serializers.ModelSerializer):
     )
     class Meta:
         model = Attendance
-        fields='_all_'
+        fields='__all__'
