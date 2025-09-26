@@ -11,7 +11,7 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
-    phone_number = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=30)
     date_of_birth = models.DateField()
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     position = models.CharField(max_length=100)
